@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRM User List</title>
+</head>
+<body>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>1C Key</th>
+      <th>Direction</th>
+      <th>Position</th>
+      <th>Department</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for user in user_list %}
+    <tr>
+      <td>{{ user.id }}</td>
+      <td>{{ user.first_name }}</td>
+      <td>{{ user.last_name }}</td>
+      <td>{{ user.profile.key1c }}</td>
+      <td>{{ user.profile.direction_key }}</td>
+      <td>{{ user.profile.position_key }}</td>
+      <td>{{ user.profile.department_key }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</body>
+</html>
